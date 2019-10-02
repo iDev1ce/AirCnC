@@ -1,0 +1,33 @@
+package.json
+
+Arquivo de configuracoes do projeto
+Ficarão armazenadas as dependencias que instalaremos no projeto (npm, yarn, etc)
+Ficarão referenciadas as dependencias instaladas no projeto.
+
+1- dependencia (adiciona dependencia express)
+    yarn add express
+
+    express ->  micro-framework, conjunto de funcionalidades prontas (para não recriar a roda kkkk)
+                biblioteca utilizada ára acelerar o processo de criação do projeto,
+                não é necessário criar do zero
+
+    express ajuda na definição de rotas que recebem requests e responses, app.listen();, etc
+
+    diretorio node_modules -> guarda o código das dependencias
+
+2- dependencia
+    yarn add nodemon -D
+                    flag -D =>  informa para o projeto que essa dependencia
+                                só será utilizada durante o desenvolvimento do projeto
+
+    adicionar no package.json uma key "scripts"
+    todos os scripts serão adicionados na key "scripts"
+    {
+        "scripts": {
+            "dev": "nodemon src/server.js"
+        }
+    }
+
+    yarn dev
+        executa o script contido na key "dev"
+    
