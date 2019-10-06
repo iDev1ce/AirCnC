@@ -54,9 +54,9 @@ mongoose.connect('mongodb+srv://juan-riquelme:j12345678@omnistack-w1c3z.gcp.mong
                 *   passamos um return na res com o método send, que envia uma mensagem. Temos vários métodos além do send,
                 *   geralmente utilizamos o json, já que estamos fazendo uma API e json é o método padrão de troca de dados
                 *   na aplicação. O método json recebe um objeto json ou um array.
-*/
 
-/*
+--------------------------------------------------------------------------------------------------
+
     Pode-se utilizar os métodos:
     GET, POST, PUT, DELETE, etc. 
 
