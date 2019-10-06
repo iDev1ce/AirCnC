@@ -4,11 +4,23 @@
 */
 
 const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
+const cors = require('cors');
+const path = require('path');
+
 
 /* 
     => criacao da aplicação
 */
 const app = express();
+
+mongoose.connect('mongodb+srv://juan-riquelme:j12345678@omnistack-w1c3z.gcp.mongodb.net/semana09?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+
+
 
 /* 
     => rota do usuario
@@ -79,8 +91,20 @@ const app = express();
         DELETE - Será utilizado quando for necessário deletar informações do backend
 
         BOA PRÁTICA -- SEMPRE COLOCAR EM INGLES E EM PLURAL O NOME DAS ROTAS
-*/
-app.put('/users/:id', (req, res) => {
+
+
+        /*
+         *  req.query == Acessar query params (para filtros)
+         *  req.params == Acessar route params (para edição, delete)
+         *  req.body == Acessar corpo da requisição (para criação, edição)
+         */
+
+app.use(cors());
+app.use(express.json());
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')));
+app.use(routes);
+
+//app.get('/users/', (req, res) => {
 
 /*
     * => Podemos pegar informação da query string quando fizermos uma rota do tipo get
@@ -91,8 +115,8 @@ app.put('/users/:id', (req, res) => {
 */
 
     //return res.send('Hello World');
-    return res.json({ id: req.params.id });
-});
+    //return res.json({ id: req.params.id });
+//});
 
 /* 
     => atribuição da porta que será executada a aplicação
@@ -103,3 +127,5 @@ app.listen(3333);
 /*
     Para inicialização do servidor, utilizar o comando node src/server.js 
 */
+
+// Sequelize (Como utilizar NodeJS com MySQL)

@@ -17,8 +17,8 @@ Ficarão referenciadas as dependencias instaladas no projeto.
 
 2- dependencia
     yarn add nodemon -D
-                    flag -D =>  informa para o projeto que essa dependencia
-                                só será utilizada durante o desenvolvimento do projeto
+                flag -D =>  informa para o projeto que essa dependencia
+                            só será utilizada durante o desenvolvimento do projeto
 
     adicionar no package.json uma key "scripts"
     todos os scripts serão adicionados na key "scripts"
