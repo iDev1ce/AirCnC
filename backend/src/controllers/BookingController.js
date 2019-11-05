@@ -7,9 +7,9 @@ module.exports = {
         const { date } = req.body;
 
         const booking = await Booking.create({
-        user: user_id,
-        spot: spot_id,
-        date,
+            user: user_id,
+            spot: spot_id,
+            date,
         });
 
         await  booking.populate('spot').populate('user').execPopulate();
